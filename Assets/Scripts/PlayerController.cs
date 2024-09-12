@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
     }
 
     public float speed = 20;
+    public float turnSpeed;
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime *speed);
+        transform.Translate(Vector3.right *Time.deltaTime* turnSpeed);
     }
 }
