@@ -19,11 +19,14 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward * Time.deltaTime *speed);
+        transform.Translate(Vector3.right *Time.deltaTime* turnSpeed);
         
         //moves car forward
         transform.Translate(Vector3.forward * Time.deltaTime *speed * forwardInput);
 
         //turns car horizontally
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
+
     }
 }
